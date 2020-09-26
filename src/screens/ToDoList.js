@@ -111,7 +111,15 @@ class ToDoList extends Component {
                                 <Text style={styles.textItem}>{text}</Text>
                             </View>
                             <View style={styles.viewItemButtons} >
-                                <TouchableOpacity onPress={() => { markedActive ? this.props.unMarkToDO(index) : this.props.markToDO(index) }} style={[styles.btnDelete, { backgroundColor: colors.colorGreen }]}>
+                                <TouchableOpacity onPress={() => {
+                                    Alert.alert(
+                                        "Confirm Delete",
+                                        '' + "Are you sure you want to Mark " + (markedActive ? "Incomplete" : "Complete") + " this item ? " + '',
+                                        [{ text: 'Mark', onPress: () => markedActive ? this.props.unMarkToDO(index) : this.props.markToDO(index) },
+                                        { text: 'Cancel' }
+                                        ], { cancelable: false }
+                                    )
+                                }} style={[styles.btnDelete, { backgroundColor: colors.colorGreen }]}>
                                     <Text style={{ color: colors.colorWhite, fontSize: 12, }}>{markedActive ? "Mark Incomplete" : "Mark Complete"}</Text>
                                 </TouchableOpacity>
                                 <TouchableOpacity onPress={() => {
