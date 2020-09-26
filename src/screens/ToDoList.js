@@ -155,10 +155,10 @@ class ToDoList extends Component {
                 <View style={styles.separator}></View>
                 <View style={{ width: '100%', flexDirection: 'row' }}>
                     <TouchableOpacity onPress={() => this.setState({ markedActive: false })} style={[styles.btnHeader, { backgroundColor: !markedActive ? colors.colorGreen : colors.colorLightGrey }]}>
-                        <Text style={{ color: markedActive ? 'grey' : colors.colorWhite, fontSize: 14, }}>{"Unmarked List"}</Text>
+                        <Text style={{ color: markedActive ? 'grey' : colors.colorWhite, fontSize: 14, }}>{"New Todos"}</Text>
                     </TouchableOpacity>
                     <TouchableOpacity onPress={() => this.setState({ markedActive: true })} style={[styles.btnHeader, { backgroundColor: markedActive ? colors.colorGreen : colors.colorLightGrey }]}>
-                        <Text style={{ color: !markedActive ? 'grey' : colors.colorWhite, fontSize: 14, }}>{"Marked List"}</Text>
+                        <Text style={{ color: !markedActive ? 'grey' : colors.colorWhite, fontSize: 14, }}>{"Completed Todos"}</Text>
                     </TouchableOpacity>
                 </View>
                 <View style={styles.marginedContainer}>
